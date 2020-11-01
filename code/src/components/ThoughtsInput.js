@@ -12,7 +12,7 @@ export const ThoughtsInput = ({ onThoughtChange }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
+        type="textarea"
         value={newThought}
         onChange={(event) => setNewThought(event.target.value)}
         className="form-text" />

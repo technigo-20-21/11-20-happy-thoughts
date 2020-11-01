@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { THOUGHTS_URL } from './urls';
 import { ThoughtsInput } from './components/ThoughtsInput';
 import { ThoughtsList } from './components/ThoughtsList';
+import { ThoughtLikes } from './components/ThoughtLikes';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -20,10 +21,15 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newThought })
     })
-      .then(() => {
-        fetchThoughts();
-      })
+      .then(() => fetchThoughts())
       .catch((error) => console.error(error));
+  }
+
+  const likeThoughts = (id) => {
+    fetch(`THOUGHTS_URL/${id}/like`, {
+      method: 'POST'
+    })
+      .then(() => likeThoughts)
   }
 
   useEffect(() => {
@@ -34,6 +40,7 @@ export const App = () => {
     <div>
       <ThoughtsInput onThoughtChange={postThoughts} />
       <ThoughtsList thoughtsList={thoughts} />
+      <ThoughtLikes getLikedThought={likeThoughts} />
     </div>
   );
 };
