@@ -15,5 +15,10 @@ export const ThoughtLikes = ({ setThoughts, thoughts }) => {
     }
   };
 
-  return <>getLikedThought={getLikedThought}</>;
+  return (
+    <div>
+      <span role="img" aria-label="red heart">❤️</span>
+      <p>{getLikedThought}</p>
+    </div>
+  )
 };

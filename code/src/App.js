@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 import { THOUGHTS_URL } from './urls';
 import { ThoughtsInput } from './components/ThoughtsInput';
-import { ThoughtsList } from './components/ThoughtsList';
+import { Thought } from './components/Thought';
 import { ThoughtLikes } from './components/ThoughtLikes';
 
 export const App = () => {
@@ -11,7 +12,7 @@ export const App = () => {
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((thought) => setThoughts(thought))
       .catch((error) => console.error(error));
   }
 
@@ -25,11 +26,13 @@ export const App = () => {
       .catch((error) => console.error(error));
   }
 
-  const likeThoughts = (id) => {
+  const onLikedThought = (id) => {
     fetch(`THOUGHTS_URL/${id}/like`, {
-      method: 'POST'
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: ''
     })
-      .then(() => likeThoughts)
+      .then(() => ThoughtLikes(id))
   }
 
   useEffect(() => {
@@ -39,8 +42,24 @@ export const App = () => {
   return (
     <div>
       <ThoughtsInput onThoughtChange={postThoughts} />
-      <ThoughtsList thoughtsList={thoughts} />
-      <ThoughtLikes getLikedThought={likeThoughts} />
+      <div>
+        {thoughts.map((thought) => {
+          return (
+            <Thought
+              message={thought.message}
+              hearts={thought.hearts}
+              time={moment(thought.createdAt).fromNow()}
+              key={thought._id}
+              id={thought._id}
+              setThoughts={setThoughts}
+              thoughts={thoughts}
+              onLikedThought={onLikedThought} />
+          )
+        })}
+      </div>
+      <div>
+        <ThoughtLikes onLikedThought={onLikedThought} />
+      </div>
     </div>
   );
 };
