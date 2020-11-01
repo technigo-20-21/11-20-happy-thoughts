@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import moment from 'moment';
 
-import { THOUGHTS_URL } from '../urls';
-
-export const ThoughtsList = () => {
-  const [thoughts, setThoughts] = useState([]);
-
-  const fetchThoughts = () => {
-    fetch(THOUGHTS_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data.reverse()))
-      .catch((error) => console.error(error));
-  }
-
-  useEffect(() => {
-    fetchThoughts();
-  }, []);
-
+export const ThoughtsList = ({ thoughtsList }) => {
   return (
     <div>
-      <p thoughts={thoughts} />
+      {
+        thoughtsList.map((thought) => (
+          <p className="thought" key={thought._id}>
+            {thought.message}
+            <span className="thought-time">
+              {moment(thought.createdAt).fromNow()}
+            </span>
+          </p>
+        ))
+      }
     </div>
   );
 };
