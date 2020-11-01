@@ -14,13 +14,25 @@ export const App = () => {
       .catch((error) => console.error(error));
   }
 
+  const postThoughts = (newThought) => {
+    fetch(THOUGHTS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: newThought })
+    })
+      .then(() => {
+        fetchThoughts();
+      })
+      .catch((error) => console.error(error));
+  }
+
   useEffect(() => {
     fetchThoughts();
   }, []);
 
   return (
     <div>
-      <ThoughtsInput />
+      <ThoughtsInput onThoughtChange={postThoughts} />
       <ThoughtsList thoughtsList={thoughts} />
     </div>
   );
