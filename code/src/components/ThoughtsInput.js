@@ -10,17 +10,20 @@ export const ThoughtsInput = ({ onThoughtChange }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="textarea"
-        value={newThought}
-        onChange={(event) => setNewThought(event.target.value)}
-        className="form-text" />
-      <input
-        type="submit"
-        value="Send Happy Thought"
-        className="add-thought-button" />
-    </form>
+    <section className="thought-container grey-background">
+      <p className="add-thought-input-header">What&apos;s making you happy right now?</p>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="textarea"
+          value={newThought}
+          onChange={(event) => setNewThought(event.target.value)}
+          className="add-thought-input" />
+        <input
+          type="submit"
+          value="Send Happy Thought"
+          className="add-thought-button" />
+      </form>
+    </section>
   );
 };
 

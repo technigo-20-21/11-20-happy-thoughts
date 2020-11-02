@@ -9,7 +9,7 @@ export const Thought = ({
   onLikedThought
 }) => {
   return (
-    <div>
+    <div className="thought-container">
       <p key={id} id={id}>
         {message}
         <span className="thought-time">{time}</span>
