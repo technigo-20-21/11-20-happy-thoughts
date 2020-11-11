@@ -14,6 +14,7 @@ export const ThoughtsInput = ({ onThoughtChange }) => {
       <p className="add-thought-input-header">What&apos;s making you happy right now?</p>
       <form onSubmit={handleSubmit}>
         <textarea
+          aria-label="Write your happy thought here."
           value={newThought}
           rows={4}
           onChange={(event) => setNewThought(event.target.value)}
