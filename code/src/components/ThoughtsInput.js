@@ -18,10 +18,16 @@ export const ThoughtsInput = ({ onThoughtChange }) => {
           rows={4}
           onChange={(event) => setNewThought(event.target.value)}
           className="add-thought-input" />
-        <input
+        <button
           type="submit"
           value="Send Happy Thought"
-          className="add-thought-button" />
+          className="add-thought-button">
+          <p>
+            <span role="img" aria-label="red heart" className="heart">❤️</span>
+            Send Happy Thought
+            <span role="img" aria-label="red heart" className="heart">❤️</span>
+          </p>
+        </button>
       </form>
     </section>
   );

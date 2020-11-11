@@ -38,6 +38,7 @@ code {
 }
 
 .thought {
+  font-weight: 600;
   word-break: break-word;
 }
 
@@ -71,6 +72,8 @@ code {
 
 .thought-time {
   margin: 12px;
+  color: #898888;
+  font-size: 12px;
   font-weight: 700;
   text-align: right;
   align-self: flex-end;
@@ -82,6 +85,7 @@ code {
 
 .add-thought-input-header {
   width: 100%;
+  font-weight: 700;
 }
 
 .add-thought-input {
@@ -98,7 +102,7 @@ code {
   font-family: "DM Mono", monospace;
   font-size: 16px;
   background: #ffadad;
-  padding: 10px 15px;
+  padding: 8px 15px;
   margin: 0 0 15px 0;
 }
 
