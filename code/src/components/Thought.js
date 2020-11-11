@@ -10,14 +10,14 @@ export const Thought = ({
 }) => {
   return (
     <div className="thought-container">
-      <p key={id} id={id}>
+      <p className="thought" id={id}>
         {message}
-        <span className="thought-time">{time}</span>
-        <span className="liked-container">
-          <ThoughtLikes id={id} onLikedThought={onLikedThought} />
-          <span className="liked"> x {hearts}</span>
-        </span>
       </p>
+      <div className="liked-container">
+        <ThoughtLikes id={id} onLikedThought={onLikedThought} />
+        <p className="liked"> x {hearts}</p>
+      </div>
+      <p className="thought-time">{time}</p>
     </div>
   );
 };

@@ -32,9 +32,48 @@ code {
   padding: 20px 25px 5px;
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.thought {
+  word-break: break-word;
+}
+
+.liked-container {
+  margin-top: 15px;
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.liked-button {
+  padding: 0 4px;
+  background-color: #ffadad;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.liked {
+  margin: 6px 0 0 6px;
+}
+
+.heart {
+  font-size: 18px;
+  margin-left: 2px;
+  padding: 4px;
+}
+
+.thought-time {
+  margin: 12px;
+  font-weight: 700;
+  text-align: right;
+  align-self: flex-end;
 }
 
 .grey-background {
@@ -47,10 +86,10 @@ code {
 
 .add-thought-input {
   width: 100%;
-  height: 60px;
   padding: 10px;
   margin: 10px auto 5px;
   resize: none;
+  word-break: break-word;
 }
 
 .add-thought-button {
@@ -71,4 +110,3 @@ code {
 .add-thought-button:active {
   background: rgba(255, 173, 173, 0.8);
 }
-

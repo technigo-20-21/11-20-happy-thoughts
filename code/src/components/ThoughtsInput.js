@@ -13,9 +13,9 @@ export const ThoughtsInput = ({ onThoughtChange }) => {
     <section className="thought-container grey-background">
       <p className="add-thought-input-header">What&apos;s making you happy right now?</p>
       <form onSubmit={handleSubmit}>
-        <input
-          type="textarea"
+        <textarea
           value={newThought}
+          rows={4}
           onChange={(event) => setNewThought(event.target.value)}
           className="add-thought-input" />
         <input
