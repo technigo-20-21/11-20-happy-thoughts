@@ -6,7 +6,7 @@ The happy thoughts project was a practice in how to use APIs in React. It was al
 
 I started with fetching the thoughts from the API and list them in the browser to get a clearer view of the data at hand. Then I made a simple sketch of the components and how to structure them before returning to VSCode. When the logic was in place, I moved on to the styling. 
 
-My biggest challenge this week was 
+My biggest challenge this week was with JSX and map-function. I ended up with infinite loops a few times due to rendering a parent-component inside the map-function. It took me quite some time to figure out what was wrong. 
 
 If I'd had more time I would have implemented a character limit on the form input and paired it with a count that updates as the user types and shows number of characters remains.
 
