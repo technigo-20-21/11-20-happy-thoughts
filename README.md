@@ -1,13 +1,29 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The happy thoughts project was a practice in how to use APIs in React. It was also a practice in working with an API which you both send and recieve data from.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with fetching the thoughts from the API and list them in the browser to get a clearer view of the data at hand. Then I made a simple sketch of the components and how to structure them before returning to VSCode. When the logic was in place, I moved on to the styling. 
+
+My biggest challenge this week was 
+
+If I'd had more time I would have implemented a character limit on the form input and paired it with a count that updates as the user types and shows number of characters remains.
+
+## Learning objectives
+
+- Lifecycle of a component in React
+- Firing requests within useEffect 
+- Call APIs and put the data into state
+- POST data from a form to an API
+
+## Tech
+
+- React
+- JSX
+- CSS
+- HTML5
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happiest-happy-thoughts.netlify.app/ 
