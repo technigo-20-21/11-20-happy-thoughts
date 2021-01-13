@@ -8,6 +8,17 @@ export const Thought = ({
   id,
   onLikedThought
 }) => {
+
+  const onLikedThought = (id) => {
+    const updateHearts = thoughts.map((thought) => {
+      if (thought._id === id) {
+        thought.hearts += 1;
+      }
+      return thought;
+    });
+    setThoughts(updateHearts);
+  };
+
   return (
     <div className="thought-container">
       <p className="thought" id={id}>

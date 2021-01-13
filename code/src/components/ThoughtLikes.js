@@ -12,7 +12,7 @@ export const ThoughtLikes = ({ id, onLikedThought }) => {
     });
 
   return (
-    <button type="button" onClick={handleLikedThought} className="liked-button">
+    <button type="button" onClick={handleLikedThought()} className="liked-button">
       <span role="img" aria-label="red heart" className="heart">❤️</span>
     </button>
   )
