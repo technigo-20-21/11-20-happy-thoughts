@@ -20,7 +20,7 @@ export const ThoughtList = ({ thoughts, setThoughts }) => {
   };
 
   const onLikedThought = (id) => {
-    fetch(`${THOUGHTS_URL}/${id}/like`, {
+    fetch(`${THOUGHTS_URL}/${id}/likes`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }
