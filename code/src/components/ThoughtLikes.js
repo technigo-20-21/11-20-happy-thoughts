@@ -1,7 +1,7 @@
 import React from 'react';
 import { LIKES_URL } from '../urls';
 
-const onLikedThought = (id) => {
+export const onLikedThought = (id) => {
   fetch(`${LIKES_URL}`, {
     method: 'POST',
     body: '',
